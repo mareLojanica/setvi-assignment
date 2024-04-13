@@ -1,0 +1,24 @@
+# Dependency directories
+node_modules/
+.pnpm/
+pnpm-lock.yaml
+yarn.lock
+
+# Optional npm cache directory
+.npm
+
+# Output directory
+dist/
+
+# IDE files
+.vscode/
+.idea/
+
+# Environment variables file
+.env
+
+# Cache and logs
+.cache/
+.log/
+
+.DS_Store
