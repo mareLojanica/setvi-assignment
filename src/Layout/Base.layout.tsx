@@ -38,10 +38,17 @@ const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
 					sx={{
 						flexGrow: 1,
 						mt: 4,
-						background: "white",
+						backgroundColor: "white",
 						borderRadius: "6px",
 						padding: "24px",
-						height: "calc(100vh - 200px)",
+						minHeight: "calc(100vh - 300px)",
+						width: {
+							md: "80vw",
+							sm: "80vw",
+							xs: "100vw",
+						},
+						margin: "20px auto",
+						marginTop: "20px",
 					}}
 				>
 					{children || <Outlet />}
