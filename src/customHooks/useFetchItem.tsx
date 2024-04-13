@@ -2,10 +2,11 @@ import { useEffect, useState } from "react"
 import { api } from "../api/api"
 import { Item } from "../Types/Api.interface"
 import { toast } from "react-toastify"
-
 import { useNavigate } from "react-router-dom"
-const useFetchItem = (itemId: string | undefined) => {
-	if (!itemId) return { item: null, loading: false, error: false }
+import { FetchItemResultIC } from "../Types/CustomHooks.iterface"
+
+const useFetchItem = (itemId: string | undefined): FetchItemResultIC => {
+	if (!itemId) return { item: null, loading: false }
 	const [item, setItem] = useState<Item | null>(null)
 	const [loading, setLoading] = useState<boolean>(true)
 	const navigate = useNavigate()

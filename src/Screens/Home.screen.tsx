@@ -5,7 +5,7 @@ import { columns } from "../config/gridConfig.tsx"
 import Loader from "../components/Loader/Loader.component.tsx"
 import Errorbox from "../components/ErrorBox/Errorbox.component.tsx"
 
-const Home = () => {
+const Home = (): JSX.Element => {
 	const { items, loading, error } = useFetchItems()
 
 	return loading ? (

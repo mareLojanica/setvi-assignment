@@ -1,7 +1,7 @@
 import { Button } from "@mui/material"
 import ArrowBackIcon from "@mui/icons-material/ArrowBack"
 
-const BackArrow = () => {
+const BackArrow = (): JSX.Element => {
 	return (
 		<Button startIcon={<ArrowBackIcon />} variant="outlined">
 			Back

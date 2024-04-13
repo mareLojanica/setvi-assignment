@@ -1,4 +1,4 @@
-import { Button } from "@mui/material"
+import { LoadingButton } from "@mui/lab"
 import { useParams } from "react-router-dom"
 
 import useFetchItem from "../customHooks/useFetchItem"
@@ -11,16 +11,20 @@ import { SubmitButtonLabelEnum } from "../Types/Component.interface"
 import FormLayout from "../Layout/Form.layout"
 import useItemDeletion from "../customHooks/useDeleteItem"
 
-const Details = () => {
+const Details = (): JSX.Element => {
 	const { id } = useParams()
 	const { item, loading } = useFetchItem(id)
-	const { handleDelete } = useItemDeletion()
+	const { handleDelete, isLoading } = useItemDeletion()
 
-	const { formik } = useItemForm(
-		{ title: item?.title ?? "", description: item?.body ?? "" },
-		(values) => onSubmitEditItem({ id: id ?? "", ...values }),
-		ItemModeEnum.EDIT
-	)
+	const { formik } = useItemForm({
+		initialValues: {
+			title: item?.title ?? "",
+			description: item?.body ?? "",
+		},
+		onSubmitCallback: (values) =>
+			onSubmitEditItem({ id: id ?? "", ...values }),
+		mode: ItemModeEnum.EDIT,
+	})
 
 	return loading ? (
 		<Loader />
@@ -30,13 +34,14 @@ const Details = () => {
 				formikData={formik}
 				submitButtonLabel={SubmitButtonLabelEnum.UPDATE}
 				deleteButton={
-					<Button
+					<LoadingButton
+						loading={isLoading}
 						variant="outlined"
 						color="error"
 						onClick={() => handleDelete(id)}
 					>
 						Delete
-					</Button>
+					</LoadingButton>
 				}
 			/>
 		</FormLayout>

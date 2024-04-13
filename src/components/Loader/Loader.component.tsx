@@ -1,6 +1,6 @@
 import { Box, CircularProgress } from "@mui/material"
 
-const Loader = () => {
+const Loader = (): JSX.Element => {
 	return (
 		<Box
 			sx={{

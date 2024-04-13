@@ -5,12 +5,13 @@ import { ItemModeEnum } from "../Types/Enums"
 import { SubmitButtonLabelEnum } from "../Types/Component.interface"
 import FormLayout from "../Layout/Form.layout"
 
-const Create = () => {
-	const { formik } = useItemForm(
-		{ title: "", description: "" },
-		onSubmitCreateItem,
-		ItemModeEnum.CREATE
-	)
+const Create = (): JSX.Element => {
+	const { formik } = useItemForm({
+		initialValues: { title: "", description: "" },
+		onSubmitCallback: onSubmitCreateItem,
+		mode: ItemModeEnum.CREATE,
+	})
+
 	return (
 		<FormLayout headline={"Create Item"}>
 			<CreateUpdateItemForm

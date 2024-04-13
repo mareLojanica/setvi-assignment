@@ -25,3 +25,6 @@ export interface FormLayoutProps {
 	headline: string
 	children: ReactNode
 }
+export interface BaseLayoutProps {
+	children?: ReactNode
+}

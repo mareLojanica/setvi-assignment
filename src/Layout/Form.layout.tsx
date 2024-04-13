@@ -4,7 +4,10 @@ import { Box, Typography } from "@mui/material"
 import { Link } from "react-router-dom"
 import BackArrow from "../components/BackArrow/BackArrow.component"
 
-const FormLayout: React.FC<FormLayoutProps> = ({ headline, children }) => {
+const FormLayout: React.FC<FormLayoutProps> = ({
+	headline,
+	children,
+}): JSX.Element => {
 	return (
 		<Box sx={{ padding: 2 }}>
 			<Link to="/">

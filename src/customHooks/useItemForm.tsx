@@ -5,17 +5,21 @@ import * as yup from "yup"
 import { ItemCreateDto, ItemUpdateDto } from "../Types/Api.interface"
 import { toast } from "react-toastify"
 import { ItemModeEnum } from "../Types/Enums"
+import {
+	UseItemFormOptionsIC,
+	UseItemFormResultIC,
+} from "../Types/CustomHooks.iterface"
 
 const validationSchema = yup.object({
 	title: yup.string().required("Title is required"),
 	description: yup.string().required("Description is required"),
 })
 
-const useItemForm = (
-	initialValues: ItemCreateDto,
-	onSubmitCallback: (values: ItemCreateDto) => Promise<ItemCreateDto>,
-	mode: ItemModeEnum
-) => {
+const useItemForm = ({
+	onSubmitCallback,
+	mode,
+	initialValues,
+}: UseItemFormOptionsIC): UseItemFormResultIC => {
 	const navigate = useNavigate()
 
 	const handleSubmit = useCallback(

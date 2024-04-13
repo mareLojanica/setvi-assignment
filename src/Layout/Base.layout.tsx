@@ -1,15 +1,12 @@
-import { FC, ReactNode } from "react"
+import React from "react"
 import { Link } from "react-router-dom"
 import { AppBar, Toolbar, Button, Container, Box } from "@mui/material"
 import { Outlet } from "react-router-dom"
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import { BaseLayoutProps } from "../Types/Component.interface"
 
-interface BaseLayoutProps {
-	children?: ReactNode
-}
-
-const BaseLayout: FC<BaseLayoutProps> = ({ children }) => {
+const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
 	return (
 		<>
 			<ToastContainer />

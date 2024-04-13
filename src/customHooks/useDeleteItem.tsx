@@ -1,14 +1,17 @@
-import { useCallback } from "react"
+import { useCallback, useState } from "react"
 import { api } from "../api/api"
 import { toast } from "react-toastify"
 import { useNavigate } from "react-router-dom"
+import { ItemDeletionHookIC } from "../Types/CustomHooks.iterface"
 
-const useItemDeletion = () => {
+const useItemDeletion = (): ItemDeletionHookIC => {
 	const navigate = useNavigate()
+	const [isLoading, setIsLoading] = useState<boolean>(false)
 
 	const handleDelete = useCallback(
-		async (id: string | undefined) => {
+		async (id: string | undefined): Promise<void> => {
 			try {
+				setIsLoading(true)
 				if (id) {
 					await api.deleteItem(id)
 					navigate("/")
@@ -18,6 +21,8 @@ const useItemDeletion = () => {
 				}
 			} catch (error) {
 				toast.error("Unable to delete item")
+			} finally {
+				setIsLoading(false)
 			}
 		},
 		[navigate]
@@ -25,6 +30,7 @@ const useItemDeletion = () => {
 
 	return {
 		handleDelete,
+		isLoading,
 	}
 }
 

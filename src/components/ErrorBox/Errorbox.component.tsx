@@ -1,7 +1,6 @@
 import { Typography } from "@mui/material"
-import React from "react"
 
-const Errorbox = () => {
+const Errorbox = (): JSX.Element => {
 	return (
 		<div style={{ textAlign: "center", padding: 20 }}>
 			<Typography variant="h5" color="error">

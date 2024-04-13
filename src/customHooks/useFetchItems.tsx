@@ -2,12 +2,9 @@ import { useEffect, useState } from "react"
 import { api } from "../api/api"
 import { Item } from "../Types/Api.interface"
 import { toast } from "react-toastify"
+import { FetchItemsHookIC } from "../Types/CustomHooks.iterface"
 
-const useFetchItems = (): {
-	items: Item[] | []
-	loading: boolean
-	error: boolean
-} => {
+const useFetchItems = (): FetchItemsHookIC => {
 	const [items, setItems] = useState<Item[] | []>([])
 	const [loading, setLoading] = useState<boolean>(true)
 	const [error, setError] = useState<boolean>(false)

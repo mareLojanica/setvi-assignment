@@ -10,7 +10,7 @@ const TextInput: React.FC<TextInputProps> = ({
 	title,
 	label,
 	touched,
-}) => {
+}): JSX.Element => {
 	return (
 		<TextField
 			fullWidth
