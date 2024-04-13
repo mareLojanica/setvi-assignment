@@ -6,7 +6,7 @@ import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import { BaseLayoutProps } from "../Types/Component.interface"
 
-const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
+const BaseLayout: React.FC<BaseLayoutProps> = ({ children }): JSX.Element => {
 	return (
 		<>
 			<ToastContainer />
