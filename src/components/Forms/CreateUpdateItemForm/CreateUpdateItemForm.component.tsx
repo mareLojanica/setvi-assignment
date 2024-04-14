@@ -11,6 +11,7 @@ const CreateUpdateItemForm: React.FC<FormProps> = ({
 }): JSX.Element => {
 	return (
 		<form onSubmit={formikData.handleSubmit}>
+			{/* this can be rendered with config array */}
 			<TextInput
 				value={formikData.values.title}
 				handleChange={(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,7 +21,7 @@ const CreateUpdateItemForm: React.FC<FormProps> = ({
 				touched={!!formikData.touched.title}
 				error={!!formikData.errors.title}
 				title="title"
-				label="Title"
+				label="Title*"
 			></TextInput>
 
 			<TextInput
@@ -32,7 +33,7 @@ const CreateUpdateItemForm: React.FC<FormProps> = ({
 				touched={!!formikData.touched.description}
 				error={!!formikData.errors.description}
 				title="description"
-				label="Description"
+				label="Description*"
 			></TextInput>
 
 			<Box
