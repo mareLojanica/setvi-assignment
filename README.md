@@ -13,42 +13,32 @@ git clone git@github.com:mareLojanica/setvi-assignment.git
 cd setvi-assignment
 ```
 
-# with npm
+# Commands
 
+## Installation
+
+### with npm
+
+```bash
 npm install
+```
 
-# with yarn
+### with yarn
 
+```bash
 yarn
+```
 
-# with npm
+## Starting server
 
+### with npm
+
+```bash
 npm run dev
+```
 
-# with yarn
+### with yarn
 
+```bash
 yarn dev
-
-# with npm
-
-npm run build
-
-# with yarn
-
-yarn build
-
-# with npm
-
-npm run lint
-
-# with yarn
-
-yarn lint
-
-# with npm
-
-npm run preview
-
-# with yarn
-
-yarn preview
+```
