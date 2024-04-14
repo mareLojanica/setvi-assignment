@@ -1,5 +1,5 @@
-import { ItemCreateDto, ItemUpdateDto } from "./Types/Api.interface"
-import { api } from "./api/api"
+import { ItemCreateDto, ItemUpdateDto } from "../Types/Api.interface"
+import { api } from "../api/api"
 
 export const onSubmitCreateItem = async (values: any) => {
 	const itemCreateDto: ItemCreateDto = {

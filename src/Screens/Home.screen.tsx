@@ -27,7 +27,6 @@ const Home = (): JSX.Element => {
 				columns={columns}
 				onRowClick={handleRowClick}
 				sx={{ cursor: "pointer" }}
-				pageSize={10}
 				pageSizeOptions={[10, 25, 50, 100]}
 			/>
 		</Box>

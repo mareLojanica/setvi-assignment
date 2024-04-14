@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 
 import useFetchItem from "../customHooks/useFetchItem"
 import useItemForm from "../customHooks/useItemForm"
-import { onSubmitEditItem } from "../utils"
+import { onSubmitEditItem } from "../utils/SubmitForm.utils"
 import Loader from "../components/Loader/Loader.component"
 import CreateUpdateItemForm from "../components/Forms/CreateUpdateItemForm/CreateUpdateItemForm.component"
 import { ItemModeEnum } from "../Types/Enums"
